@@ -38,16 +38,6 @@ panxpwm.start(7.5)
 panypwm=GPIO.PWM(p2,50)
 panypwm.start(7.5)
 
-def connected():
-    while True:
-        try :
-            url = "https://www.google.com"
-            urllib.urlopen(url)
-            status = "Connected"
-            check = 1
-        except :
-            status = "Not connect"
-            check = 0
 
 def Main():
     host = '192.168.43.101'
@@ -58,7 +48,7 @@ def Main():
 
     print("Server Started.")
     
-    while check:
+    while True:
         data, addr = s.recvfrom(2048)
         print (data)
 
